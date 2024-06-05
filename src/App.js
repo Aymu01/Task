@@ -8,6 +8,7 @@ function App() {
   const data = useSelector((state) => state.form.data)
   const dispatch = useDispatch()
   console.log(data);
+  
   return (
     <div className={Style.App}>
       <Form onFinish={(data) => dispatch(addData(data))}>
