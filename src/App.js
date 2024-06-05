@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Style from './App.module.css';
+import { Row, Col, Form, Button } from 'antd';
+import Card from './components/card/card';
+import { useDispatch, useSelector } from 'react-redux';
+import { addData } from './redux/form/formSlice';
+import Person from './components/person/person';
 function App() {
+  const data = useSelector((state) => state.form.data)
+  const dispatch = useDispatch()
+  console.log(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={Style.App}>
+      <Form onFinish={(data) => dispatch(addData(data))}>
+        <Row gutter={16}>
+          <Col span={12} >
+            <Card choose='personal' title={'Şəxsi məlumatları'}/>
+          </Col>
+          <Col span={12} >
+            <Card choose='work' title={'İş yeri məlumatları'} />
+          </Col>
+        </Row>
+        <div className={Style.button}>
+          <Button type='primary' htmlType='submit' size='large'>Göndər</Button>
+        </div>
+      </Form>
+<Person/>
     </div>
   );
 }

@@ -1,0 +1,45 @@
+.person{
+    background-color: #ECF5FF;
+    border-radius: 12px;
+    padding: 30px 15px ;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.three{
+    width: 24px;
+    height: 24px;
+    border:1px solid #016DAF;
+    color: #016DAF;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.name{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    color: #016DAF;
+}
+.position{
+    font-weight: 500;
+    font-style: italic;
+    color: #302E38;
+}
+.contact{
+    font-size: 14px;
+    color: #868686;
+}
